@@ -215,6 +215,21 @@
             Console.WriteLine("This line call");
             */
 
+            // Nesne Üretim İşlemi
+            var obj = new Action();
+            // obj ile (.) operatörü sınıf içindeki yetekleri çağırır
+            obj.Message();
+
+            int a = obj.Sum(50, 65);
+            int b = obj.Sum(33, 25);
+            int c = obj.Sum(12, 35);
+            int d = obj.Sum(67, 90);
+
+            Console.WriteLine(a);
+            Console.WriteLine(b);
+            Console.WriteLine(c);
+            Console.WriteLine(d);
+
         }
 
     }
