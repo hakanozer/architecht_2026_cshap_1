@@ -230,6 +230,41 @@
             Console.WriteLine(c);
             Console.WriteLine(d);
 
+            string dataSt = obj.Join("Kelime ", 10);
+            Console.WriteLine(dataSt);
+
+            Console.WriteLine("-----------------------");
+            CustomerList customerList = new CustomerList();
+            customerList.Execute();
+
+            Console.WriteLine("-----------------------");
+            CustomerModel customer = obj.Profile();
+            Console.WriteLine(customer);
+
+            Console.WriteLine("-----------------------");
+            FileService fileService = new(@"datas/data.txt");
+            fileService.Create();
+            fileService.AllWriteLine();
+
+            List<string> datas = fileService.ReadLines();
+            foreach (var item in datas)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine(fileService.folderName);
+
+            Console.WriteLine("-----------------------");
+            // Enum
+            obj.HasRole(ERole.CUSTOMER);
+
+            // Static
+            // Nesne üretim işlemi olmaksızın Sınıf adı (.) operatörü ile erişim sağlanır.
+            Action.data = "Veritabanı Erişim Bilgisi";
+            Console.WriteLine(Action.data);
+            Console.WriteLine(obj.ahmet);
+            
+
+
         }
 
     }
